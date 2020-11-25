@@ -2,7 +2,11 @@
 
 ## What is this? 
 
-This is a repo with example scripts for use with FusionAuth's device authorization grant.
+This is a repo with example scripts for use with FusionAuth's device authorization grant. 
+
+More info on Fusionauth, or specifically the device grant, checkout the below links.
+- https://fusionauth.io/learn/expert-advice/oauth/oauth-device-authorization/   
+- https://fusionauth.io/docs/v1/tech/oauth/#example-device-authorization-grant
 
 ## Why ?
 
