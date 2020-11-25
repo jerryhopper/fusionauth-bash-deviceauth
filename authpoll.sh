@@ -24,4 +24,11 @@ while [  $SECONDS -lt  $end ] ;  do
 done
 
 echo "$AJSON"
+
+ACCESS_TOKEN="$(echo $AJSON|jq -r .access_token)"
+EXPIRES_IN="$(echo $AJSON|jq -r .expires_in)"
+TOKEN_TYPE="$(echo $AJSON|jq -r .token_type)"
+USER_ID="$(echo $AJSON|jq -r .userId)"
+
+
 exit 0
