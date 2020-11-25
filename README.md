@@ -13,8 +13,11 @@ This is a good starting point for a singleboard-computer like raspberry pi, to m
 
 ## authorize.sh 
 
-
+Initiates a authorization request for this device
 
 
 ## authpoll.sh
+
+Polls idp server, waits for a succesful authorization response as initiated by authorize.sh
+
 
