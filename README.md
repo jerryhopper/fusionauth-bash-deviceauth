@@ -11,7 +11,9 @@ This is a good starting point for a singleboard-computer like raspberry pi, to m
 
 ### Usage
 
-Edit the authorize.sh and authpoll.sh  and provide CLIENT_ID and the location of your Fusionauth instance 
+Edit the authorize.sh and authpoll.sh  and provide CLIENT_ID and the location of your Fusionauth instance.
+
+The script will output the raw json response.
 
 
 ## authorize.sh 
@@ -24,3 +26,6 @@ Initiates a authorization request for this device
 Polls idp server, waits for a succesful authorization response as initiated by authorize.sh
 
 
+### TODO
+
+lots
