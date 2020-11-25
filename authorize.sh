@@ -7,7 +7,7 @@ CLIENT_ID="FUSIONAUTH_CLIENTID"
 AUTH_URL="https://FUSIONAUTH/oauth2/device_authorize"
 
 
-JSON=$(curl -s -X POST -F "client_id=${CLIENT_ID}" -F "scope=offline" ${AUTH_URL})
+JSON=$(curl -s -X POST -F "client_id=${CLIENT_ID}" -F "scope=offline_access" ${AUTH_URL})
 
 echo $JSON
 
