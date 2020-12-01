@@ -72,7 +72,8 @@ jobs:
           echo "CLIENT_ID=85a03867-dccf-4882-adde-1a79aeec50df">.env
           echo "APPLICATION_ID=89d998a5-aaef-45d0-9765-adf1f3e00c65">.env
           echo "FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd">.env
-          docker-compose --env-file .env up -d
+          # docker-compose --env-file .env up -d
+          docker-compose up -d
           sleep 4
           docker-compose logs
 
