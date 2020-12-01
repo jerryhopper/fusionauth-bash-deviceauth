@@ -7,7 +7,7 @@ name: BUILD-TEST
 on:
   push:
     branches:
-      - master
+      - "master"
 #on:
 #  push:
 #    branches:
