@@ -32,6 +32,7 @@ deviceauth.sh  - this message
 ```
 
 
+
 ## deviceauth.sh authorize 
 
 Initiates a authorization request for this device
