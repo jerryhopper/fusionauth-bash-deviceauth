@@ -71,7 +71,9 @@ jobs:
           docker-compose up -d
           sleep 4
           docker-compose logs
-
+      - name: Run docker
+        shell: bash
+        run: |
           curl -vs http://localhost:9011 2>&1 | less
       - name: Stop docker
           shell: bash
