@@ -64,16 +64,14 @@ jobs:
       - name: Run docker
         shell: bash
         run: |
-          export POSTGRES_USER="test-user"
-          export POSTGRES_PASSWORD="test-password"
-          export DATABASE_USERNAME="db-user"
-          export DATABASE_PASSWORD="db-password"
-          export FUSIONAUTH_MEMORY=512M
-          export FUSIONAUTH_APP_KICKSTART_FILE="fusionauth_kickstart.json"
           cd tests
+          curl -o docker-compose.yml https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/docker-compose.yml
+          curl -o .env https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/.env
+          echo "FUSIONAUTH_APP_KICKSTART_FILE=fusionauth_kickstart.json">.env
           docker-compose up -d
-          sleep 10
+          sleep 4
           docker-compose logs
+
           curl -vs http://localhost:9011 2>&1 | less
 
 
