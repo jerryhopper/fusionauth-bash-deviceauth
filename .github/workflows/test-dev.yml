@@ -59,4 +59,12 @@ jobs:
         shell: bash
         run: |
           docker pull fusionauth/fusionauth-app
+      - name: Run docker
+        shell: bash
+        run: |
+          cd tests
+          docker-compose up -d
+
+
+
 
