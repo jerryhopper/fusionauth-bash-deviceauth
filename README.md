@@ -21,18 +21,18 @@ You can override this directory with the Environment variable  OAUTH_CONFIGDIR_E
 
 ```
 Usage :
-deviceAuth.sh setDiscovery <oauth discovery url> - Sets the discovery url. (saved in /root/.oauth2/.openid-configuration.url)
-deviceAuth.sh discover - Retrieves discovery information. (saved in )
-deviceAuth.sh setClientid - Sets the clientId. (saved in /root/.oauth2/.client_id )
-deviceAuth.sh authorize - Authorize this device. ( returns json with authorize url info saved in /root/.oauth2/.tokenrequest.json)
-deviceAuth.sh poll - Start polling for the authorization token. (on success, returns json from /root/.oauth2/.authorization )
-deviceAuth.sh renew - Attemt to renew the authorization token. (on success, returns json from /root/.oauth2/.authorization )
-deviceAuth.sh reset - resets owner info.
-deviceAuth.sh  - this message
+deviceauth.sh setDiscovery <oauth discovery url> - Sets the discovery url. (saved in /root/.oauth2/.openid-configuration.url)
+deviceauth.sh discover - Retrieves discovery information. (saved in )
+deviceauth.sh setClientid - Sets the clientId. (saved in /root/.oauth2/.client_id )
+deviceauth.sh authorize - Authorize this device. ( returns json with authorize url info saved in /root/.oauth2/.tokenrequest.json)
+deviceauth.sh poll - Start polling for the authorization token. (on success, returns json from /root/.oauth2/.authorization )
+deviceauth.sh renew - Attemt to renew the authorization token. (on success, returns json from /root/.oauth2/.authorization )
+deviceauth.sh reset - resets owner info.
+deviceauth.sh  - this message
 ```
 
 
-## deviceAuth.sh authorize 
+## deviceauth.sh authorize 
 
 Initiates a authorization request for this device
 
@@ -50,9 +50,9 @@ Example response :
 ```
 
 
-## deviceAuth.sh poll
+## deviceauth.sh poll
 
-Polls idp server, waits for a succesful authorization response as initiated by authorize.sh
+Polls idp server, waits for a succesful authorization response as initiated by deviceauth.sh authorize
 
 Example response :
 
