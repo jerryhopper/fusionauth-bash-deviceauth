@@ -68,7 +68,7 @@ jobs:
           export POSTGRES_PASSWORD="test-password"
           export DATABASE_USERNAME="db-user"
           export DATABASE_PASSWORD="db-password"
-          export FUSIONAUTH_MEMORY=512
+          export FUSIONAUTH_MEMORY=512M
           export FUSIONAUTH_APP_KICKSTART_FILE="fusionauth_kickstart.json"
           cd tests
           docker-compose up -d
