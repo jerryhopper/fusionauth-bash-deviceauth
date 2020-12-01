@@ -67,6 +67,7 @@ jobs:
           export DATABASE_USERNAME="db-user"
           export DATABASE_PASSWORD="db-password"
           export FUSIONAUTH_MEMORY=512
+          export FUSIONAUTH_APP_KICKSTART_FILE="fusionauth_kickstart.json"
           cd tests
           docker-compose up -d
           sleep 10
