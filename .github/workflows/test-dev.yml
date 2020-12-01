@@ -79,7 +79,13 @@ jobs:
         shell: bash
         run: |
           bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration
+      - name: run api commands
+        shell: bash
+        run: |
           bash ./deviceauth.sh setClientid 85a03867-dccf-4882-adde-1a79aeec50df
+      - name: run api commands
+        shell: bash
+        run: |
           bash ./deviceauth.sh authorize
           ls -latr
 
