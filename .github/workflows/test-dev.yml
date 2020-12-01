@@ -73,7 +73,7 @@ jobs:
           sleep 4
           docker-compose logs
 
-      - name: Run docker
+      - name: run api commands
         shell: bash
         run: |
           curl -vs http://localhost:9011 2>&1 | less
