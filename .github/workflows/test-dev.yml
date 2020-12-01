@@ -80,7 +80,9 @@ jobs:
 
       - name: Stop docker
         shell: bash
-        run: docker-compose down
+        run: |
+          cd tests
+          docker-compose down
 
 
 
