@@ -42,4 +42,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install docker
+      - name: Pull Fusionauth
+          shell: bash
+          run: |
+            docker pull fusionauth/fusionauth-app
           
