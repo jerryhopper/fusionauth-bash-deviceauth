@@ -71,6 +71,7 @@ jobs:
           docker-compose up -d
           sleep 10
           docker-compose logs
+          curl -vs http://fusionauth:9011 2>&1 | less
 
 
 
