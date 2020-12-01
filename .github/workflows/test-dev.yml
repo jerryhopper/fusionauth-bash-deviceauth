@@ -62,11 +62,11 @@ jobs:
       - name: Run docker
         shell: bash
         run: |
-          POSTGRES_USER="test-user"
-          POSTGRES_PASSWORD="test-password"
-          DATABASE_USERNAME="db-user"
-          DATABASE_PASSWORD="db-password"
-          FUSIONAUTH_MEMORY=512
+          export POSTGRES_USER="test-user"
+          export POSTGRES_PASSWORD="test-password"
+          export DATABASE_USERNAME="db-user"
+          export DATABASE_PASSWORD="db-password"
+          export FUSIONAUTH_MEMORY=512
           cd tests
           docker-compose up -d
           sleep 10
