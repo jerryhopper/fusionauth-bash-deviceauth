@@ -79,8 +79,8 @@ jobs:
           curl -vs http://localhost:9011 2>&1 | less
 
       - name: Stop docker
-          shell: bash
-          run: docker-compose down
+        shell: bash
+        run: docker-compose down
 
 
 
