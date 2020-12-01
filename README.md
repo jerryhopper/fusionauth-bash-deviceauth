@@ -15,12 +15,24 @@ This is a good starting point for a singleboard-computer like raspberry pi, to m
 
 ### Usage
 
-Edit the authorize.sh and authpoll.sh  and provide CLIENT_ID and the location of your Fusionauth instance.
+This script uses the current user's homedir to store information.
 
-The script will output the raw json response.
+You can override this directory with the Environment variable  OAUTH_CONFIGDIR_ENV
+
+```
+Usage :
+deviceAuth.sh setDiscovery <oauth discovery url> - Sets the discovery url. (saved in /root/.oauth2/.openid-configuration.url)
+deviceAuth.sh discover - Retrieves discovery information. (saved in )
+deviceAuth.sh setClientid - Sets the clientId. (saved in /root/.oauth2/.client_id )
+deviceAuth.sh authorize - Authorize this device. ( returns json with authorize url info saved in /root/.oauth2/.tokenrequest.json)
+deviceAuth.sh poll - Start polling for the authorization token. (on success, returns json from /root/.oauth2/.authorization )
+deviceAuth.sh renew - Attemt to renew the authorization token. (on success, returns json from /root/.oauth2/.authorization )
+deviceAuth.sh reset - resets owner info.
+deviceAuth.sh  - this message
+```
 
 
-## authorize.sh 
+## deviceAuth.sh authorize 
 
 Initiates a authorization request for this device
 
@@ -38,7 +50,7 @@ Example response :
 ```
 
 
-## authpoll.sh
+## deviceAuth.sh poll
 
 Polls idp server, waits for a succesful authorization response as initiated by authorize.sh
 
@@ -54,6 +66,7 @@ Example response :
   "userId" : "3b6d2f70-4821-4694-ac89-60333c9c4165"
 }
 ```
+
 
 
 
