@@ -78,7 +78,12 @@ jobs:
       - name: run api commands
         shell: bash
         run: |
-          bash ./deviceauth.sh
+          export OAUTH_CONFIGDIR_ENV=$PWD
+          bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration
+          bash ./deviceauth.sh setClientid 85a03867-dccf-4882-adde-1a79aeec50df
+          bash ./deviceauth.sh authorize
+          ls -latr
+
 
       - name: Stop docker
         shell: bash
