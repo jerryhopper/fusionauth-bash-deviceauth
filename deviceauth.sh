@@ -45,7 +45,7 @@ OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE="/etc/osbox/refreshtokenrequest.json"
 discover(){
   # $1 represents OAUTH_OPENID_CONFIG_FILE
   # $2 represents OAUTH_OPENID_CONFIGURL
-  http_response=$(curl -m 3 -s -o $2 -X GET -w "%{http_code}" -H "Content-type: application/json" $1 )
+  http_response=$(curl -L -m 3 -s -o $2 -X GET -w "%{http_code}" -H "Content-type: application/json" $1 )
   if [ $http_response == "000"  ]; then
       # handle error
       #echo "{\"error\":\"Unknown error\",\"error_description\":\"curl returned: 000 $1\"}"

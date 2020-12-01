@@ -78,7 +78,7 @@ jobs:
       - name: run api commands
         shell: bash
         run: |
-          curl http://localhost:9011/.well-known/openid-configuration
+          curl -L http://localhost:9011/.well-known/openid-configuration
       - name: run api commands
         shell: bash
         run: |
