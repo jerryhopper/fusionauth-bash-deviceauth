@@ -45,6 +45,7 @@ jobs:
             apt-transport-https \
             ca-certificates \
             curl \
+            jq \
             gnupg-agent \
             software-properties-common
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
