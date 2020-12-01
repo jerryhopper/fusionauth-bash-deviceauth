@@ -68,7 +68,9 @@ Example response :
 ```
 
 
+### Known issues
 
+Renew token can fail, if you have enabled 'Require authentication' in the fusionauth administration for this application.
 
 ### RTFM
 
