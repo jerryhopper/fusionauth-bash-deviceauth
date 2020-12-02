@@ -40,7 +40,7 @@ services:
       FUSIONAUTH_APP_URL: http://fusionauth:9011
       SEARCH_TYPE: database
       FUSIONAUTH_APP_KICKSTART_FILE: fusionauth_kickstart.json
-      CLIENT_ID: 85a03867-dccf-4882-adde-1a79aeec50df
+      CLIENT_ID: 89d998a5-aaef-45d0-9765-adf1f3e00c65
       APPLICATION_ID: 89d998a5-aaef-45d0-9765-adf1f3e00c65
       FUSIONAUTH_API_KEY: 4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd
 
