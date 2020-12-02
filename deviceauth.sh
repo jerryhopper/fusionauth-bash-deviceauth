@@ -318,8 +318,10 @@ if [ "$1" == "setDiscovery" ]; then
     fi
     # Write the discovery url to file.
     echo "$2">$OAUTH_OPENID_CONFIGURL_FILE
+    echo "Setting discovery $2"
     # Run discovery with the given url.
     discover $2 $OAUTH_OPENID_CONFIG_FILE
+
     if [ ! -f $OAUTH_OPENID_CONFIG_FILE ];then
         echo "Error fetching discovery information"
         exit 1
