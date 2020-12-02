@@ -4,7 +4,7 @@
     "adminPassword": "#{ENV.FUSIONAUTH_ADMIN_PASSWORD}",
     "secondTenantId": "#{UUID()}",
     "applicationId": "89d998a5-aaef-45d0-9765-adf1f3e00c65",
-    "clientId": "85a03867-dccf-4882-adde-1a79aeec50df"
+    "clientId": "89d998a5-aaef-45d0-9765-adf1f3e00c65"
   },
   "apiKeys": [
     {
