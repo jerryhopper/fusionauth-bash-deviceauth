@@ -117,6 +117,7 @@ poll(){
     # $2 $CLIENT_ID_FILE
     # $3 $TOKEN_URL
     # $4 $OAUTH_OPENID_TOKEN_FILE
+    # $5 $POLLONCE (should contain 'once')
 
     # check if request file exists.
     if [ ! -f $1 ]; then
@@ -152,7 +153,11 @@ poll(){
           echo "$AJSON"
           exit 0
         fi
-
+        if [ "$5" == "once" ];then
+            #echo "Polled one time."
+            echo "$AJSON"
+            exit 0
+        fi
         if [ "$HAS_ERROR" != "authorization_pending" ]; then
           echo "$HAS_ERROR"
           rm -f $1
@@ -258,7 +263,7 @@ if [ "$1" == "poll" ]; then
     DISCOVERY_INFO="$(<$OAUTH_OPENID_CONFIG_FILE)"
     TOKEN_URL="$(echo $DISCOVERY_INFO|jq -r .token_endpoint)"
 
-    poll $OAUTH_OPENID_TOKEN_REQUEST_FILE $CLIENT_ID_FILE $TOKEN_URL $OAUTH_OPENID_TOKEN_FILE
+    poll $OAUTH_OPENID_TOKEN_REQUEST_FILE $CLIENT_ID_FILE $TOKEN_URL $OAUTH_OPENID_TOKEN_FILE $2
 
 fi
 
