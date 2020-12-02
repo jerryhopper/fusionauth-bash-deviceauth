@@ -44,7 +44,7 @@ services:
       APPLICATION_ID: 89d998a5-aaef-45d0-9765-adf1f3e00c65
       FUSIONAUTH_API_KEY: 4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd
 
-networks:
+    networks:
       - db
     restart: unless-stopped
     ports:
