@@ -65,34 +65,25 @@ jobs:
         shell: bash
         run: |
           cd tests
-          #curl -o docker-compose.yml https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/docker-compose.yml
-          #curl -o .env https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/.env
-          #echo "#">.env
-          #echo "FUSIONAUTH_APP_KICKSTART_FILE=fusionauth_kickstart.json">.env
-          #echo "CLIENT_ID=85a03867-dccf-4882-adde-1a79aeec50df">.env
-          #echo "APPLICATION_ID=89d998a5-aaef-45d0-9765-adf1f3e00c65">.env
-          #echo "FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd">.env
-          ls -latr
-          cat .env
           docker-compose up -d
           sleep 2
           docker-compose config
           sleep 3
           docker-compose logs
 
-      - name: run api commands
+      - name: Get openid-configuration
         shell: bash
         run: |
-          curl -L http://localhost:9011/.well-known/openid-configuration
-      - name: run api commands
+          curl http://localhost:9011/.well-known/openid-configuration
+      - name: run deviceauth.sh setDiscovery
         shell: bash
         run: |
           bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration
-      - name: run api commands
+      - name: run deviceauth.sh setClientid
         shell: bash
         run: |
           bash ./deviceauth.sh setClientid 85a03867-dccf-4882-adde-1a79aeec50df
-      - name: run api commands
+      - name: run deviceauth.sh authorize
         shell: bash
         run: |
           bash ./deviceauth.sh authorize
