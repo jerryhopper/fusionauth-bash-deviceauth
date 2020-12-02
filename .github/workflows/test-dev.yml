@@ -73,6 +73,7 @@ jobs:
           echo "APPLICATION_ID=89d998a5-aaef-45d0-9765-adf1f3e00c65">.env
           echo "FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd">.env
           ls -latr
+          cat .env
           docker-compose up -d
           sleep 2
           docker-compose config
