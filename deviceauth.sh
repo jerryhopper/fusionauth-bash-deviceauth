@@ -324,7 +324,7 @@ if [ "$1" == "setDiscovery" ]; then
         echo "Error fetching discovery information"
         exit 1
     fi
-
+    exit 0
   fi
 
   if [ "$2" == "" ]; then
