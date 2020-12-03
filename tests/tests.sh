@@ -74,7 +74,7 @@ echo "------------------------------------------------------------------------"
 #END AUTHORIZE
 echo "deviceauth.sh poll"
 echo " "
-bash ./deviceauth.sh poll
+bash ./deviceauth.sh poll once
 
 echo "deviceauth.sh renew"
 echo " "
