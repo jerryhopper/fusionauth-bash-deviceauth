@@ -25,6 +25,7 @@ echo "ClientId=$CLIENT_ID"
 CLIENT_SECRET="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientSecret)"
 echo "ClientSecret=$CLIENT_SECRET"
 
+exit 0
 
 # ls -latr
 echo " "
