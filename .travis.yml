@@ -11,7 +11,7 @@ before_install:
   - docker-compose up -d
 
 script:
-  - bash tests/test.sh
+  - bash tests/tests.sh
 
 
 
