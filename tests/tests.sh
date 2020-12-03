@@ -29,7 +29,7 @@ bash ./deviceauth.sh authorize
 
 bash ./deviceauth.sh poll once
 
-#AUTHORIZE
+#BEGIN AUTHORIZE
 
 
 
@@ -55,10 +55,11 @@ curl -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
 
+#END AUTHORIZE
 
 
 
 
-#deviceauth.sh poll once
+bash ./deviceauth.sh poll once
 
 #deviceauth.sh renew
