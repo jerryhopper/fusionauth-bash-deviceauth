@@ -31,7 +31,7 @@ deviceauth.sh reset - resets owner info.
 deviceauth.sh  - this message
 ```
 
-## Example use
+## Example usage workflow
 
 First, set the discover-url.
 ```
@@ -60,6 +60,7 @@ Renew the token, using the refresh-token.
 ```
 deviceauth.sh renew 
 ```
+
 
 
 ### Example responses
