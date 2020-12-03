@@ -38,15 +38,15 @@ JSON="$(<$HOME/.oauth2/.tokenrequest.json)"
 USERCODE=$(echo $JSON|jq -r .user_code)
 echo "GET http://localhost:9011/oauth2/device/validate?client_id=$CLIENT_ID&user_code=$USERCODE"
 curl -i "http://localhost:9011/oauth2/device/validate?client_id=$CLIENT_ID&user_code=$USERCODE"
-
+echo "------------------------------------------------------------------------"
 
 
 #echo $JSON
 echo "Manually Authorizing the device."
 echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE)"
-
 echo "curl -s --location --request POST 'http://localhost:9011/oauth2/token'"
 echo " "
+
 curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --header 'Content-Type: application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
@@ -56,7 +56,7 @@ curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --data-urlencode 'password=userpassword' \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
-
+echo "------------------------------------------------------------------------"
 #END AUTHORIZE
 echo "deviceauth.sh poll"
 echo " "
