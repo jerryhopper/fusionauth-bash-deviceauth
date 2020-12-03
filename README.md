@@ -1,4 +1,7 @@
+[![Build Status](https://travis-ci.com/jerryhopper/fusionauth-bash-deviceauth.svg?branch=master)](https://travis-ci.com/jerryhopper/fusionauth-bash-deviceauth)
+
 # fusionauth-bash-deviceauth
+
 
 ## What is this? 
 
