@@ -15,11 +15,11 @@ before_install:
   - sleep 45
 
 script:
-  - docker-compose logs
+  - docker logs fusionauth
   - bash tests/tests.sh
   - docker ps -a
   - sleep 10
-  - docker-compose logs
+  - docker logs fusionauth
 
 
 
