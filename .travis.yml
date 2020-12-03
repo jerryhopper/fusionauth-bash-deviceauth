@@ -11,7 +11,7 @@ before_install:
   - docker pull fusionauth/fusionauth-app:latest
   - echo "">>.env
   - export FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd
-  - export FUSIONAUTH_APP_KICKSTART_FILE=/usr/local/fusionauth/kickstart/kickstart.json
+  - export FUSIONAUTH_APP_KICKSTART_FILE=/usr/local/fusionauth/kickstart/device-auth-grant_require_authentication_false.jsonn
   - export APPLICATION_ID=89d998a5-aaef-45d0-9765-adf1f3e00c65
   - echo "Populating .env"
   - echo "FUSIONAUTH_APP_KICKSTART_FILE=$FUSIONAUTH_APP_KICKSTART_FILE">>.env
