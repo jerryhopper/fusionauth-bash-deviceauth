@@ -343,6 +343,12 @@ if [ "$1" == "setDiscovery" ]; then
     # Run discovery with the given url.
     discover $2 $OAUTH_OPENID_CONFIG_FILE
 
+    if [ "$?" != "0" ];then
+        echo "Error fetching discovery information"
+        exit 1
+    fi
+
+
     if [ ! -f $OAUTH_OPENID_CONFIG_FILE ];then
         echo "Error fetching discovery information"
         exit 1
@@ -372,7 +378,10 @@ if [ "$1" == "discover" ]; then
       exit 1
   fi
   discover "$(<$OAUTH_OPENID_CONFIGURL_FILE)" $OAUTH_OPENID_CONFIG_FILE
-
+  if [ "$?" != "0" ];then
+      echo "Error fetching discovery information"
+      exit 1
+  fi
   exit 0
 fi
 
