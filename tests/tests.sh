@@ -4,10 +4,12 @@ echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
 echo "APPLICATION_ID=$APPLICATION_ID"
 
 curl -o "application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
-#APPLICATIONJSON="$(<application.json)"
-CLIENT_ID="$(echo $(<application.json)|jq -r .application.oauthConfiguration.clientId)"
+APPLICATIONJSON="$(<application.json)"
+echo $APPLICATIONJSON
+
+CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
 echo "ClientId $CLIENT_ID"
-CLIENT_SECRET="$(echo $(<application.json)|jq -r .application.oauthConfiguration.clientSecret)"
+CLIENT_SECRET="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientSecret)"
 echo "ClientSecret $CLIENT_SECRET"
 
 
