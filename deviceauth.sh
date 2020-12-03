@@ -153,17 +153,16 @@ poll(){
           echo "$AJSON"
           exit 0
         fi
-        if [ "$5" == "once" ];then
-            #echo "Polled one time."
-            echo "$AJSON"
-            exit 0
-        fi
         if [ "$HAS_ERROR" != "authorization_pending" ]; then
           echo "$HAS_ERROR"
           rm -f $1
           exit 1
         fi
-
+        if [ "$5" == "once" ];then
+            #echo "Polled one time."
+            echo "$AJSON"
+            exit 0
+        fi
     done
 
 
@@ -210,11 +209,16 @@ renew(){
   elif [ $http_response != "200" ]; then
       # handle error
       echo "$(cat $OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE)"
-      rm $FILE
+      if [ -f $FILE ]; then
+        rm $FILE
+      fi
       exit 1
   elif [ $http_response == "200" ]; then
       JSON="$(cat $OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE)"
-      rm -f $OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE
+      if [ -f $OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE ]; then
+        rm -f $OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE
+      fi
+
       echo $JSON>$OAUTH_OPENID_TOKEN_FILE
       echo $JSON
       exit 0
