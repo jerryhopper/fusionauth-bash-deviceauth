@@ -12,9 +12,10 @@ before_install:
   - echo "FUSIONAUTH_APP_KICKSTART_FILE=/usr/local/fusionauth/kickstart/kickstart.json">>.env
   - echo "FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd">>.env
   - docker-compose up -d
-  - sleep 40
+  - sleep 45
 
 script:
+  - docker-compose logs
   - bash tests/tests.sh
   - docker ps -a
   - sleep 10
