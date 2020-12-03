@@ -1,0 +1,75 @@
+{
+  "variables": {
+    "apiKey": "#{ENV.FUSIONAUTH_API_KEY}",
+    "defaultTenantId": "#{ENV.DEF_TENANTID}",
+    "adminPassword": "#{ENV.FUSIONAUTH_ADMIN_PASSWORD}",
+    "secondTenantId": "#{UUID()}",
+    "applicationId": "#{ENV.APPLICATION_ID}",
+    "userEmail": "#{ENV.APP_USEREMAIL}",
+    "userPassword": "#{ENV.APP_USERPASSWORD}"
+  },
+  "apiKeys": [
+    {
+      "key": "#{apiKey}",
+      "description":"Standard development API key"
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "url": "/api/application/#{applicationId}",
+      "tenantId": "#{defaultTenantId}",
+      "body": {
+        "application": {
+          "name": "Pied Piper",
+          "roles": [
+            {
+              "name": "dev"
+            },
+            {
+              "name": "ceo"
+            },
+            {
+              "name": "intern"
+            }
+          ],
+          "oauthConfiguration": {
+            "deviceVerificationURL": "http://localhost:9111/oauth2/device?client_id=#{applicationId}&tenantId=#{defaultTenantId}",
+            "requireClientAuthentication": false,
+            "enabledGrants": [
+              "urn:ietf:params:oauth:grant-type:device_code",
+              "authorization_code",
+              "refresh_token",
+              "password"
+            ]
+          }
+
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/user/registration/00000000-0000-0000-0000-000000000001",
+      "tenantId": "#{defaultTenantId}",
+      "body": {
+        "user": {
+          "birthDate": "1981-06-04",
+          "email": "#{userEmail}",
+          "firstName": "user",
+          "lastName": "user",
+          "password": "#{userPassword}",
+          "data": {
+            "Company": "PiedPiper",
+            "PreviousCompany": "Aviato",
+            "user_type": "iconclast"
+          }
+        },
+        "registration": {
+          "applicationId": "#{applicationId}",
+          "roles": []
+        }
+      }
+    }
+
+  ]
+}
