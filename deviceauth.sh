@@ -39,7 +39,7 @@ OAUTH_OPENID_CONFIG_FILE="${OAUTH_CONFIGDIR}/.openid-configuration.json"
 OAUTH_OPENID_TOKEN_FILE="${OAUTH_CONFIGDIR}/.authorization"
 
 OAUTH_OPENID_TOKEN_REQUEST_FILE="${OAUTH_CONFIGDIR}/.tokenrequest.json"
-OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE="/etc/osbox/refreshtokenrequest.json"
+OAUTH_OPENID_REFRESHTOKEN_REQUEST_FILE="${OAUTH_CONFIGDIR}/refreshtokenrequest.json"
 
 
 discover(){
@@ -268,6 +268,7 @@ if [ "$1" == "poll" ]; then
     TOKEN_URL="$(echo $DISCOVERY_INFO|jq -r .token_endpoint)"
 
     poll $OAUTH_OPENID_TOKEN_REQUEST_FILE $CLIENT_ID_FILE $TOKEN_URL $OAUTH_OPENID_TOKEN_FILE $2
+    exit 0
 
 fi
 
@@ -303,6 +304,7 @@ if [ "$1" == "setClientid" ]; then
     fi
     echo $CLIENT_ID_FILE
     echo "$2">$CLIENT_ID_FILE
+    exit 0
   fi
   if [ "$2" == "" ]; then
     echo "Error!  - Missing clientId"
