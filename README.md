@@ -22,7 +22,7 @@ You can override this directory with the Environment variable  OAUTH_CONFIGDIR_E
 ```
 Usage :
 deviceauth.sh setDiscovery <oauth discovery url> - Sets the discovery url. (saved in /root/.oauth2/.openid-configuration.url)
-deviceauth.sh discover - Retrieves discovery information. (saved in )
+deviceauth.sh discover - Retrieves discovery information. (saved in /root/.oauth2/.openid-configuration.json )
 deviceauth.sh setClientid - Sets the clientId. (saved in /root/.oauth2/.client_id )
 deviceauth.sh authorize - Authorize this device. ( returns json with authorize url info saved in /root/.oauth2/.tokenrequest.json)
 deviceauth.sh poll - Start polling for the authorization token. (on success, returns json from /root/.oauth2/.authorization )
