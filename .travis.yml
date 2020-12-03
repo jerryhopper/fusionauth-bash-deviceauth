@@ -12,6 +12,7 @@ before_install:
 
 script:
   - bash tests/tests.sh
+  - docker ps -a
 
 
 
