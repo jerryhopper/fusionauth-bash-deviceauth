@@ -23,6 +23,7 @@ before_install:
   - docker-compose up -d
   - docker-compose config
   - sleep 45
+  - docker logs fusionauth
 
 script:
   - bash tests/tests.sh
