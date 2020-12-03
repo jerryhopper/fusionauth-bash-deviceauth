@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#####################################
+# deviceauth.sh  (2020) JerryHopper
+# provide oauth2 device-authorization functionality in bash
+# https://github.com/jerryhopper/fusionauth-bash-deviceauth
+
+
+
+
+
+
 # is_command function
 is_command() {
     # Checks for existence of string passed in as only function argument.
