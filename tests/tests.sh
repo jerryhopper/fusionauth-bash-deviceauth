@@ -1,10 +1,14 @@
 #!/bin/bash
 
+
+set -e
+
+
 echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
 echo "APPLICATION_ID=$APPLICATION_ID"
 echo "DISCOVERY_URL=$DISCOVERY_URL"
 
-curl -s $DISCOVERY_URL
+
 
 OPENID_CONFIG="$(curl -s $DISCOVERY_URL)"
 
@@ -13,8 +17,9 @@ OPENID_CONFIG="$(curl -s $DISCOVERY_URL)"
 
 curl -s -H "Authorization: $FUSIONAUTH_API_KEY" http://localhost:9011/api/application/$APPLICATION_ID
 
-APPLICATIONJSON="$(curl -s -H "Authorization: $FUSIONAUTH_API_KEY" http://localhost:9011/api/application/$APPLICATION_ID )"
+APPLICATIONJSON="$(curl -s -H \"Authorization: $FUSIONAUTH_API_KEY\" http://localhost:9011/api/application/$APPLICATION_ID )"
 echo "APPLICATIONJSON=$APPLICATIONJSON"
+
 
 
 CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
