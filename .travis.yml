@@ -4,6 +4,7 @@ services:
   - docker
 
 before_install:
+  - apt-get install jq
   - curl -o docker-compose.yml https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/docker-compose.yml
   - curl -o .env https://raw.githubusercontent.com/FusionAuth/fusionauth-containers/master/docker/fusionauth/.env
   - docker pull postgres:11.9-alpine
@@ -11,6 +12,7 @@ before_install:
   - echo "">>.env
   - echo "FUSIONAUTH_APP_KICKSTART_FILE=/usr/local/fusionauth/kickstart/kickstart.json">>.env
   - echo "FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd">>.env
+  - export FUSIONAUTH_API_KEY=4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd
   - docker-compose up -d
   - docker-compose config
   - sleep 45
