@@ -49,7 +49,7 @@ echo "------------------------------------------------------------------------"
 
 #echo $JSON
 echo "Manually Authorizing the device."
-echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE)"
+echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE + scope=offline_access)"
 echo "curl -s --location --request POST 'http://localhost:9011/oauth2/token'"
 echo " "
 
