@@ -31,6 +31,33 @@ bash ./deviceauth.sh poll once
 
 #AUTHORIZE
 
+
+
+JSON="$(<$HOME/.oauth2/.tokenrequest.json)"
+#echo $JSON
+USERCODE=$(echo $JSON|jq -r .user_code)
+echo "GET http://localhost:9011/oauth2/device/validate?client_id=$CLIENT_ID&user_code=$USERCODE"
+curl -i "http://localhost:9011/oauth2/device/validate?client_id=$CLIENT_ID&user_code=$USERCODE"
+
+
+
+#echo $JSON
+echo "Manually Authorizing the device."
+echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE)"
+--data-urlencode 'scope=offline_access' \
+curl -s --location --request POST 'http://localhost:9011/oauth2/token' \
+      --header 'Content-Type: application/x-www-form-urlencoded' \
+      --data-urlencode 'grant_type=password' \
+      --data-urlencode "client_id=$CLIENT_ID|jq -r .application.oauthConfiguration.clientId)" \
+      --data-urlencode "client_secret=$CLIENT_SECRET|jq -r .application.oauthConfiguration.clientSecret)" \
+      --data-urlencode 'username=user@local.nu' \
+      --data-urlencode 'password=userpassword' \
+      --data-urlencode "user_code=$USERCODE"
+
+
+
+
+
 #deviceauth.sh poll once
 
 #deviceauth.sh renew
