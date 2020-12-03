@@ -19,16 +19,20 @@ echo "ClientSecret=$CLIENT_SECRET"
 
 
 # ls -latr
-
+echo " "
 echo "bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration"
 bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration
 
+echo " "
 echo "bash ./deviceauth.sh setClientid $CLIENT_ID"
 bash ./deviceauth.sh setClientid $CLIENT_ID
 
+echo " "
 echo "bash ./deviceauth.sh authorize"
 bash ./deviceauth.sh authorize
 
+echo " "
+echo "bash ./deviceauth.sh poll once"
 bash ./deviceauth.sh poll once
 
 #BEGIN AUTHORIZE
