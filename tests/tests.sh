@@ -1,8 +1,9 @@
 #!/bin/bash
 
 echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
+echo "APPLICATION_ID=$APPLICATION_ID"
 
-curl -s -o "application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' http://localhost:9011/api/application/89d998a5-aaef-45d0-9765-adf1f3e00c65
+curl -o "application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
 #APPLICATIONJSON="$(<application.json)"
 CLIENT_ID="$(echo $(<application.json)|jq -r .application.oauthConfiguration.clientId)"
 echo "ClientId $CLIENT_ID"
