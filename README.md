@@ -31,7 +31,38 @@ deviceauth.sh reset - resets owner info.
 deviceauth.sh  - this message
 ```
 
+## Example use
 
+First, set the discover-url.
+```
+deviceauth.sh setDiscovery https://fusionauth:9011/.well-known/openid-configuration
+```
+
+Second, set the ClientID
+```
+deviceauth.sh setClientid 30663132-6464-6665-3032-326466613934
+```
+
+Then, issue the device-authorization request
+```
+deviceauth.sh authorize
+```
+This will return JSON (see below) present the code & url to the user.
+
+
+Start polling of the user has entered the code on the url given in the previous step
+```
+deviceauth.sh poll
+```
+On success, a token + refresh-token + user is returned in json, this can be used to make authenticated requests....
+
+Renew the token, using the refresh-token.
+```
+deviceauth.sh renew 
+```
+
+
+### Example responses
 
 ## deviceauth.sh authorize 
 
