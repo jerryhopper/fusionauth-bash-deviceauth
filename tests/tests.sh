@@ -59,8 +59,7 @@ curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
 
 #END AUTHORIZE
 echo "deviceauth.sh poll"
-
 bash ./deviceauth.sh poll
 
 echo "deviceauth.sh renew"
-deviceauth.sh renew
+bash ./deviceauth.sh renew
