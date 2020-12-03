@@ -11,9 +11,9 @@ APPLICATIONJSON="$(curl -s -H "Authorization: $FUSIONAUTH_API_KEY" "http://local
 #echo "APPLICATIONJSON=$APPLICATIONJSON"
 
 CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
-echo "ClientId $CLIENT_ID"
+echo "ClientId=$CLIENT_ID"
 CLIENT_SECRET="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientSecret)"
-echo "ClientSecret $CLIENT_SECRET"
+echo "ClientSecret=$CLIENT_SECRET"
 
 
 # ls -latr
