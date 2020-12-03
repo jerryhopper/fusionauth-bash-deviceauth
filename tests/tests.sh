@@ -46,7 +46,7 @@ echo "Manually Authorizing the device."
 echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE)"
 
 echo "curl -s --location --request POST 'http://localhost:9011/oauth2/token'"
-
+echo " "
 curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --header 'Content-Type: application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
@@ -59,7 +59,9 @@ curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
 
 #END AUTHORIZE
 echo "deviceauth.sh poll"
+echo " "
 bash ./deviceauth.sh poll
 
 echo "deviceauth.sh renew"
+echo " "
 bash ./deviceauth.sh renew
