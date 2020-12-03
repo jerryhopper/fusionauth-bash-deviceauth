@@ -5,7 +5,7 @@ echo "APPLICATION_ID=$APPLICATION_ID"
 
 curl -o "application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
 APPLICATIONJSON="$(<application.json)"
-echo $APPLICATIONJSON
+echo "APPLICATIONJSON=$APPLICATIONJSON"
 
 CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
 echo "ClientId $CLIENT_ID"
