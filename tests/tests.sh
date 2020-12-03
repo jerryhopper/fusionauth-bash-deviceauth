@@ -27,7 +27,7 @@ bash ./deviceauth.sh setClientid $CLIENT_ID
 echo "bash ./deviceauth.sh authorize"
 bash ./deviceauth.sh authorize
 
-#deviceauth.sh poll once
+bash ./deviceauth.sh poll once
 
 #AUTHORIZE
 
