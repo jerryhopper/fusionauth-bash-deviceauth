@@ -3,10 +3,11 @@
 echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
 echo "APPLICATION_ID=$APPLICATION_ID"
 
-curl "http://localhost:9011/.well-known/openid-configuration"
+OPENID_CONFIG="$(curl -s "http://localhost:9011/.well-known/openid-configuration")"
 
-curl -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
-APPLICATIONJSON="$(<$HOME/application.json)"
+
+curl -s -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
+APPLICATIONJSON="$(curl -s -H "Authorization: $FUSIONAUTH_API_KEY" "http://localhost:9011/api/application/$APPLICATION_ID" )"
 echo "APPLICATIONJSON=$APPLICATIONJSON"
 
 CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
