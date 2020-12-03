@@ -9,10 +9,12 @@ before_install:
   - docker pull postgres:11.9-alpine
   - docker pull fusionauth/fusionauth-app:latest
   - docker-compose up -d
+  - sleep 10
 
 script:
   - bash tests/tests.sh
   - docker ps -a
+  - docker-compose logs
 
 
 
