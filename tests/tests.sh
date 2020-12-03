@@ -10,13 +10,16 @@ OPENID_CONFIG="$(curl -s "$DISCOVERY_URL")"
 
 
 #curl -s -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
+
+curl -s -H "Authorization: $FUSIONAUTH_API_KEY" "http://localhost:9011/api/application/${APPLICATION_ID}"
+
 APPLICATIONJSON="$(curl -s -H "Authorization: $FUSIONAUTH_API_KEY" "http://localhost:9011/api/application/${APPLICATION_ID}" )"
 echo "APPLICATIONJSON=$APPLICATIONJSON"
 
 
-CLIENT_ID="$(echo ${APPLICATIONJSON}|jq -r .application.oauthConfiguration.clientId)"
+CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
 echo "ClientId=$CLIENT_ID"
-CLIENT_SECRET="$(echo ${APPLICATIONJSON}|jq -r .application.oauthConfiguration.clientSecret)"
+CLIENT_SECRET="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientSecret)"
 echo "ClientSecret=$CLIENT_SECRET"
 
 
