@@ -1,9 +1,9 @@
 #!/bin/bash
 
-deviceauth.sh setDiscovery https://fusionauth:9011/.well-known/openid-configuration
+./../deviceauth.sh setDiscovery https://fusionauth:9011/.well-known/openid-configuration
 
 
-deviceauth.sh setClientid 30663132-6464-6665-3032-32646
+./../deviceauth.sh setClientid 30663132-6464-6665-3032-32646
 
 
 #deviceauth.sh authorize
