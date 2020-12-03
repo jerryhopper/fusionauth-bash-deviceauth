@@ -23,11 +23,8 @@ before_install:
   - sleep 45
 
 script:
-  - docker logs fusionauth
   - bash tests/tests.sh
   - docker ps -a
-  - sleep 10
-  - docker logs fusionauth
 
 
 
