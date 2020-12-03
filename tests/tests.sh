@@ -10,7 +10,7 @@ echo "DISCOVERY_URL=$DISCOVERY_URL"
 
 OPENID_CONFIG="$(curl -s $DISCOVERY_URL)"
 
-
+TOKEN_ENDPOINT=$(echo $OPENID_CONFIG|jq -r .token_endpoint)
 
 #curl -s -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
 
@@ -54,17 +54,17 @@ echo "------------------------------------------------------------------------"
 
 #echo $JSON
 echo "Manually Authorizing the device."
-echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE + scope=offline_access)"
-echo "curl -s --location --request POST 'http://localhost:9011/oauth2/token'"
+echo "POST $TOKEN_ENDPOINT (grant_type=password + user_code=$USERCODE + scope=offline_access)"
+echo "curl -s --location --request POST '$TOKEN_ENDPOINT'"
 echo " "
 
-curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
+curl -i -s --location --request POST "$TOKEN_ENDPOINT" \
       --header 'Content-Type: application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
       --data-urlencode "client_id=$CLIENT_ID" \
       --data-urlencode "client_secret=$CLIENT_SECRET" \
-      --data-urlencode 'username=user@local.nu' \
-      --data-urlencode 'password=userpassword' \
+      --data-urlencode 'username=$APP_USEREMAIL' \
+      --data-urlencode 'password=$APP_USERPASSWORD' \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
 echo " "
