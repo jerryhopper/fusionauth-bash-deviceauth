@@ -3,6 +3,8 @@
 echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
 echo "APPLICATION_ID=$APPLICATION_ID"
 
+
+
 OPENID_CONFIG="$(curl -s "http://localhost:9011/.well-known/openid-configuration")"
 
 
@@ -56,7 +58,7 @@ curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --data-urlencode 'password=userpassword' \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
-echo "------------------------------------------------------------------------"
+echo "\n\n------------------------------------------------------------------------"
 #END AUTHORIZE
 echo "deviceauth.sh poll"
 echo " "
