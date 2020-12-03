@@ -358,9 +358,9 @@ fi
 if [ "$1" == "" ]; then
   echo "Usage :";
   echo "deviceauth.sh setDiscovery <oauth discovery url> - Sets the discovery url. (saved in $OAUTH_OPENID_CONFIGURL_FILE) "
-  echo "deviceauth.sh discover - Retrieves discovery information. (saved in $OAUTH_OPENID_CONFIGURL)"
-  echo "deviceauth.sh setClientid - Sets the clientId. (saved in $CLIENT_ID_FILE ) "
-  echo "deviceauth.sh authorize - Authorize this device. ( returns json with authorize url info saved in $OAUTH_OPENID_TOKEN_REQUEST_FILE)"
+  echo "deviceauth.sh discover - Retrieves discovery information. returns JSON (saved in $OAUTH_OPENID_CONFIG_FILE)"
+  echo "deviceauth.sh setClientid - Sets the clientId.  returns JSON (saved in $CLIENT_ID_FILE ) "
+  echo "deviceauth.sh authorize - Authorize this device. returns JSON (saved in $OAUTH_OPENID_TOKEN_REQUEST_FILE)"
   echo "deviceauth.sh poll - Start polling for the authorization token. (on success, returns json from $OAUTH_OPENID_TOKEN_FILE )"
   echo "deviceauth.sh renew - Attemt to renew the authorization token. (on success, returns json from $OAUTH_OPENID_TOKEN_FILE )"
   echo "deviceauth.sh reset - resets owner info. "
