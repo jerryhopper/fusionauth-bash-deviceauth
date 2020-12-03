@@ -44,7 +44,7 @@ curl -i "http://localhost:9011/oauth2/device/validate?client_id=$CLIENT_ID&user_
 #echo $JSON
 echo "Manually Authorizing the device."
 echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=$USERCODE)"
---data-urlencode 'scope=offline_access' \
+
 curl -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --header 'Content-Type: application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
@@ -52,6 +52,7 @@ curl -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --data-urlencode "client_secret=$CLIENT_SECRET|jq -r .application.oauthConfiguration.clientSecret)" \
       --data-urlencode 'username=user@local.nu' \
       --data-urlencode 'password=userpassword' \
+      --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
 
 
