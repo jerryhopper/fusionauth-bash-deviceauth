@@ -58,7 +58,10 @@ curl -i -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --data-urlencode 'password=userpassword' \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
-echo "\n\n------------------------------------------------------------------------"
+echo " "
+echo " "
+
+echo "------------------------------------------------------------------------"
 #END AUTHORIZE
 echo "deviceauth.sh poll"
 echo " "
