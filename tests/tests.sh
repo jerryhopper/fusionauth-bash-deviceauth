@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+ls -latr
+
+ls -latr ./..
+
+
 bash ./../deviceauth.sh setDiscovery https://fusionauth:9011/.well-known/openid-configuration
 
 
