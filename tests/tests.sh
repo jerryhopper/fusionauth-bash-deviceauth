@@ -48,8 +48,8 @@ echo "POST http://localhost:9011/oauth2/token  (grant_type=password + user_code=
 curl -s --location --request POST 'http://localhost:9011/oauth2/token' \
       --header 'Content-Type: application/x-www-form-urlencoded' \
       --data-urlencode 'grant_type=password' \
-      --data-urlencode "client_id=$CLIENT_ID|jq -r .application.oauthConfiguration.clientId)" \
-      --data-urlencode "client_secret=$CLIENT_SECRET|jq -r .application.oauthConfiguration.clientSecret)" \
+      --data-urlencode "client_id=$CLIENT_ID" \
+      --data-urlencode "client_secret=$CLIENT_SECRET" \
       --data-urlencode 'username=user@local.nu' \
       --data-urlencode 'password=userpassword' \
       --data-urlencode 'scope=offline_access' \
