@@ -4,7 +4,7 @@
 ls -latr
 
 
-bash ./deviceauth.sh setDiscovery https://fusionauth:9011/.well-known/openid-configuration
+bash ./deviceauth.sh setDiscovery http://localhost:9011/.well-known/openid-configuration
 
 
 bash ./deviceauth.sh setClientid 30663132-6464-6665-3032-32646
