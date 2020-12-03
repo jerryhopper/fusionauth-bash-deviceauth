@@ -10,7 +10,7 @@ echo "DISCOVERY_URL=$DISCOVERY_URL"
 
 OPENID_CONFIG="$(curl -s $DISCOVERY_URL)"
 
-echo "OPENID_CONFIG=***"
+
 
 #curl -s -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
 
@@ -22,7 +22,6 @@ echo "ClientId=$CLIENT_ID"
 CLIENT_SECRET="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientSecret)"
 echo "ClientSecret=$CLIENT_SECRET"
 
-exit 0
 
 # ls -latr
 echo " "
