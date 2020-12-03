@@ -13,13 +13,8 @@ OPENID_CONFIG="$(curl -s $DISCOVERY_URL)"
 echo "OPENID_CONFIG=***"
 
 #curl -s -o "$HOME/application.json" -H 'Authorization: $FUSIONAUTH_API_KEY' "http://localhost:9011/api/application/$APPLICATION_ID"
-echo "Curl"
-curl -i -H "Authorization: 4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd" "http://localhost:9011/api/application/89d998a5-aaef-45d0-9765-adf1f3e00c65"
 
-echo "x"
-APPLICATIONJSON=$(curl -s -H "Authorization: 4737ea8520bd454caabb7cb3d36e14bc1832c0d3f70a4189b82598670f11b1bd" http://localhost:9011/api/application/89d998a5-aaef-45d0-9765-adf1f3e00c65 )
-echo "APPLICATIONJSON=$APPLICATIONJSON"
-
+APPLICATIONJSON=$(curl -s -H "Authorization: $FUSIONAUTH_API_KEY" http://localhost:9011/api/application/$APPLICATION_ID )
 
 
 CLIENT_ID="$(echo $APPLICATIONJSON|jq -r .application.oauthConfiguration.clientId)"
