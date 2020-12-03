@@ -1,8 +1,6 @@
 #!/bin/bash
 
 
-set -e
-
 
 echo "FUSIONAUTH_API_KEY=$FUSIONAUTH_API_KEY"
 echo "APPLICATION_ID=$APPLICATION_ID"
