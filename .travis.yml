@@ -26,6 +26,7 @@ before_install:
 script:
   - ## Run the test script
   - bash tests/tests.sh
+  - docker logs fusionauth
 
 
 
