@@ -36,7 +36,6 @@
           "oauthConfiguration": {
             "deviceVerificationURL": "http://localhost:9111/oauth2/device?client_id=#{applicationId}&tenantId=#{defaultTenantId}",
             "requireClientAuthentication": false,
-            "generateRefreshTokens": true,
             "enabledGrants": [
               "urn:ietf:params:oauth:grant-type:device_code",
               "authorization_code",
