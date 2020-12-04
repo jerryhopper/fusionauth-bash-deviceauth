@@ -63,8 +63,8 @@ curl -i -s --location --request POST "$TOKEN_ENDPOINT" \
       --data-urlencode 'grant_type=password' \
       --data-urlencode "client_id=$CLIENT_ID" \
       --data-urlencode "client_secret=$CLIENT_SECRET" \
-      --data-urlencode 'username=$APP_USEREMAIL' \
-      --data-urlencode 'password=$APP_USERPASSWORD' \
+      --data-urlencode "username=$APP_USEREMAIL" \
+      --data-urlencode "password=$APP_USERPASSWORD" \
       --data-urlencode 'scope=offline_access' \
       --data-urlencode "user_code=$USERCODE"
 echo " "
