@@ -107,6 +107,7 @@ Example response :
 ### Known issues
 
 Renew token can fail, if you have enabled 'Require authentication' in the fusionauth administration for this application.
+This is expected behavior, dont use 'Require authentication' as it requires to have the client-secret to be present on the client.
 
 ### RTFM
 
